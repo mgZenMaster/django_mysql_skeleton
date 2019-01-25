@@ -1,24 +1,24 @@
 version: '3'
 
 volumes:
-   djmyskeldata:
+   myappdata:
 
 networks:
-  djmyskelnet:
+  myappnet:
 
 services:
   db:
     image: mysql:5.6.42
-    container_name: djmyskeldb
+    container_name: myappdb
     ports:
       - "3308:3306"
     networks:
-      - djmyskelnet
+      - myappnet
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: djmyskel
+      MYSQL_DATABASE: myapp
     volumes:
-      - djmyskeldata:/var/lib/mysql
+      - myappdata:/var/lib/mysql
 
   web:
     container_name: django
@@ -29,6 +29,6 @@ services:
     ports:
       - "8000:8000"
     networks:
-      - djmyskelnet
+      - myappnet
     depends_on:
       - db

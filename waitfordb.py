@@ -2,10 +2,10 @@ import MySQLdb
 
 from time import sleep
 
-dbhost='djmyskeldb'
+dbhost='myappdb'
 dbuser='root'
 dbpasswd='root'
-dbname = 'djmyskel'
+dbname = 'myapp'
 
 while True:
     try:

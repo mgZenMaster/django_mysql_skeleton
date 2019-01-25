@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'djproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djmyskel',
+        'NAME': 'myapp',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'db'
