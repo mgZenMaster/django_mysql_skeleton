@@ -14,3 +14,15 @@ So just run `docker-compose up`, wait some time, and then you can connect to Dja
 
 The root directory of this project will be mapped into the Django container, so every code change
 you make will be immediately active in the container.
+
+To use this for your own projects, just replace the string `myapp` all over the project with your application name.
+Also replace the string `djproj` all over the code with your project name.
+It is safe to do this via a script.
+
+## Jinja2, Boostrap and Crispy Forms
+
+For nicer and quicker development with forms, there is the branch jinja2_bootstrap4
+
+This gives you a basic responsive layout with a menu-bar that you can build upon.
+
+To use crispy forms, just write the tag `{{ crispy(form) }}` in your template, at the posititon where you want the form to appear.
