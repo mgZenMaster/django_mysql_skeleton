@@ -17,7 +17,9 @@ you make will be immediately active in the container.
 
 To use this for your own projects, just replace the string `myapp` all over the project with your application name.
 Also replace the string `djproj` all over the code with your project name.
-It is safe to do this via a script.
+It is safe to do this via a script, if you rename only lowercase strings or can preserve the case (like in PyCharm). Only the class MyAppConfig has camel-case, but you can leave that also as it is.
+
+Renaming will also change the name of the containers, databases, database, the volume and the network, so there will be no conflicts between parallel projects. You only have to change the port mapping manually in `docker-compose.yml`, if you want to run stuff in parallel.
 
 ## Jinja2, Boostrap and Crispy Forms
 
