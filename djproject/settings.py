@@ -90,7 +90,10 @@ DATABASES = {
         'NAME': 'myapp',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': 'db'
+        'HOST': 'db',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        }
     }
 }
 
