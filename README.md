@@ -26,3 +26,7 @@ For nicer and quicker development with forms, there is the branch jinja2_bootstr
 This gives you a basic responsive layout with a menu-bar that you can build upon.
 
 To use crispy forms, just write the tag `{{ crispy(form) }}` in your template, at the posititon where you want the form to appear.
+
+## License
+
+This code is provided under GNU General Public License v3.0
