@@ -8,7 +8,10 @@ if [ ! -f /.initdj ] ;then
     python /app/manage.py makemigrations myapp
     python /app/manage.py migrate
 
-    echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'pass')" | python manage.py shell
+    CU="from django.contrib.auth.models import User;"
+    CU="${CU} User.objects.create_superuser('admin', 'admin@example.com', 'pass')"
+    CU="${CU} if User.objects.filter(username='admin').count() == 0 else None"
+    echo "${CU}" | python manage.py shell
     touch /.initdj
 fi
 
