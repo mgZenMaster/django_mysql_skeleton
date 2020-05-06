@@ -1,4 +1,4 @@
-import pymysql
+import MySQLdb
 
 from time import sleep
 
@@ -9,7 +9,7 @@ dbname = 'myapp'
 
 while True:
     try:
-        con = pymysql.connect(host=dbhost, user=dbuser, passwd=dbpasswd, db=dbname)
+        con = MySQLdb.connect(host=dbhost, user=dbuser, passwd=dbpasswd, db=dbname)
         break
     except Exception as ex:
         print('mySQL not available - sleeping...\n')
@@ -20,7 +20,7 @@ sleep(4)
 
 while True:
     try:
-        con = pymysql.connect(host=dbhost, user=dbuser, passwd=dbpasswd, db=dbname)
+        con = MySQLdb.connect(host=dbhost, user=dbuser, passwd=dbpasswd, db=dbname)
         break
     except Exception as ex:
         print('mySQL not available - sleeping...\n')
