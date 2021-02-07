@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
+import configparser
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -80,19 +81,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djproject.wsgi.application'
 
+configfile = configparser.ConfigParser()
+configfile.read(os.path.join(BASE_DIR, '..', '.secrets', 'djproject.cfg'))
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+try:
+    dbconfig = configfile['database']
+except KeyError:
+    dbconfig = {}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myapp',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'db',
+        'NAME': dbconfig.get('schema', 'thoughts'),
+        'USER': dbconfig.get('user', 'root'),
+        'PASSWORD': dbconfig.get('password', 'root'),
+        'HOST': dbconfig.get('host', 'db'),
         'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'sql_mode': 'traditional',
         }
     }
 }
