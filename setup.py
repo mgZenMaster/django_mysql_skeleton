@@ -22,11 +22,15 @@ def replace_in_file(search, replace, file):
 
 base_path = pathlib.Path(__file__).parent.absolute()
 
-project_name = input("Your project name:")
+project_name = input("Your project name: ")
 project_name_lower = project_name.lower().replace(" ", "")
-application_name = input("Your application name:")
+application_name = input("Your application name: ")
 application_name_lower = application_name.lower().replace(" ", "")
 application_name_camel = re.sub(r'(?:^| |_|-)+([a-zA-Z])', re_upper, application_name_lower)
+
+if project_name_lower == application_name_lower:
+    print("Your project and your application can not have the same name.")
+    exit(1)
 
 os.system(f'git checkout -b {project_name_lower} ')
 
