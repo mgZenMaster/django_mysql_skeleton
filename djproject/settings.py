@@ -95,7 +95,7 @@ except KeyError:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': dbconfig.get('schema', 'thoughts'),
+        'NAME': dbconfig.get('schema', 'myapp'),
         'USER': dbconfig.get('user', 'root'),
         'PASSWORD': dbconfig.get('password', 'root'),
         'HOST': dbconfig.get('host', 'db'),
