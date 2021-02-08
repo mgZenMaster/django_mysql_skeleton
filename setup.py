@@ -69,5 +69,8 @@ replace_in_file('MyAppConfig', f'{application_name_camel}Config',
 replace_in_file('myapp', application_name_lower,
                 os.path.join(base_path, 'djproject', 'settings.py'))
 
+replace_in_file('myapp', application_name_lower,
+                os.path.join(base_path, 'bin', 'export_app_data.sh'))
+
 os.system(f'git mv myapp {application_name_lower}')
 os.system(f'git mv djproject {project_name_lower}')
