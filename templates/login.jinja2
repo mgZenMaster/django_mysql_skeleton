@@ -1,0 +1,29 @@
+{% extends "layout.jinja2" %}
+{% block content %}
+    <div class="container pt-2 pb-4 mt-4" style="max-width: 600px; background: #f8f8f8">
+        <h1>Login</h1>
+    <form method="post" action="{{ url('login') }}">
+    {% csrf_token %}
+    {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            Wrong Username or Password, please try again.
+        </div>
+    {% endif %}
+    {% if next %}
+        <div class="alert alert-danger" role="alert">
+            You don't have access to this page.
+        </div>
+    {% endif %}
+    <div class="form-group">
+        {{ form.username }}
+    </div>
+    <div class="form-group">
+        {{ form.password }}
+    </div>
+    <div class="mt-4">
+        <input type="submit" value="login">
+        <input type="hidden" name="next" value="{{ next }}">
+    </div>
+    </form>
+    </div>
+{% endblock %}

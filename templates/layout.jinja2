@@ -7,44 +7,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-
     <title>Django Skeleton</title>
   </head>
   <body>
 
     {% block navigation %}
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Django Skeleton</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarEntries"
-                aria-controls="#navbarEntries" aria-expanded="false" aria-label="Aria Label">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarEntries">
-            <ul class="nav navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Menu 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Menu 2</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+      {% include "navigation.jinja2" %}
     {% endblock %}
 
     {% block content %}
     <div class="container pt-2 pb-4 mt-4 text-center">
-        <H1>Here comes the content.</H1>
+      <H1>Here comes the content.</H1>
     </div>
     {% endblock %}
 
     <!--
-        Bootstrap only needs the slim version of jQuery, so you can use this tag instead, if you don't need
-        the full version (no ajax, no effects).
+      Bootstrap only needs the slim version of jQuery, so you can use this tag instead, if you don't need
+      the full version (no ajax, no effects).
 
-        <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-                crossorigin="anonymous"></script>
+      <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"
+              integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+              crossorigin="anonymous"></script>
     -->
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

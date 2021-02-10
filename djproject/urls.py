@@ -20,5 +20,7 @@ import djproject.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.welcome),
+    path('', views.welcome, name='welcome'),
+    path('login/', views.LoginView.as_view(), name='login'),
+    path('logout/', views.LogoutView.as_view(), name='logout'),
 ]
