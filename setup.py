@@ -55,6 +55,12 @@ replace_in_file('djproject', project_name_lower,
 replace_in_file('djproject', project_name_lower,
                 os.path.join(base_path, 'manage.py'))
 
+try:
+    replace_in_file('djproject', project_name_lower,
+                    os.path.join(base_path, 'setup_nocloud.py'))
+except FileNotFoundError:
+    pass
+
 replace_in_file('myapp', application_name_lower,
                 os.path.join(base_path, 'docker-compose.yml'))
 
