@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import render, redirect
 
-from djproject.forms import LoginForm
+from forms import LoginForm
 
 
 def welcome(request):
