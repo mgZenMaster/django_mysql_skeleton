@@ -52,6 +52,9 @@ replace_in_file('djproject', project_name_lower,
 replace_in_file('djproject', project_name_lower,
                 os.path.join(base_path, 'djproject', 'wsgi.py'))
 
+replace_in_file('djproject', project_name_lower,
+                os.path.join(base_path, 'manage.py'))
+
 replace_in_file('myapp', application_name_lower,
                 os.path.join(base_path, 'docker-compose.yml'))
 
@@ -72,9 +75,6 @@ replace_in_file('myapp', application_name_lower,
 
 replace_in_file('myapp', application_name_lower,
                 os.path.join(base_path, 'bin', 'export_app_data.sh'))
-
-replace_in_file('myapp', application_name_lower,
-                os.path.join(base_path, 'manage.py'))
 
 os.system(f'git mv myapp {application_name_lower}')
 os.system(f'git mv djproject {project_name_lower}')
